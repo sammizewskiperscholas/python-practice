@@ -6,7 +6,7 @@ def make_positive_big(numbers):
         if integer > 0:
             position=numbers.index(integer)
             numbers[position]="big"
-    print(numbers)
+    return(numbers)
 
 #Count Positives - Given a list of numbers, create a function to replace last value with number of positive values.
 # Example, count_positives([-1,1,1,1]) changes list #to [-1,1,1,3] and returns it.  (Note that zero is not considered to be a positive number).
@@ -17,11 +17,13 @@ def replace_last_pos_count(numbers):
         if integers > 0:
             positive_count+=1
     numbers[-1] = positive_count
-    print(numbers)
+    return(numbers)
 
 #SumTotal - Create a function that takes a list as an argument and returns the sum of all the values in the list.  
 #For example sum_total([1,2,3,4]) should return 10
 
+def sum_values(numbers):
+    return(sum(numbers))
 
 #Average - Create a function that takes a list as an argument and returns the average of all the values in the list.  
 #For example multiples([1,2,3,4]) should return #2.5
