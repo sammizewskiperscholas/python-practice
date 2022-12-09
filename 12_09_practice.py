@@ -1,16 +1,23 @@
 #Biggie Size - Given a list, write a function that changes all positive numbers in the list to "big". 
 #Example: make_it_big([-1, 3, 5, -5]) returns that same list, #changed to [-1, "big", "big", -5].
+
 def make_positive_big(numbers):
     for integer in numbers:
         if integer > 0:
             position=numbers.index(integer)
             numbers[position]="big"
-
-make_positive_big([6,10,4,-6,-8])
+    print(numbers)
 
 #Count Positives - Given a list of numbers, create a function to replace last value with number of positive values.
 # Example, count_positives([-1,1,1,1]) changes list #to [-1,1,1,3] and returns it.  (Note that zero is not considered to be a positive number).
 
+def replace_last_pos_count(numbers):
+    positive_count = 0
+    for integers in numbers:
+        if integers > 0:
+            positive_count+=1
+    numbers[-1] = positive_count
+    print(numbers)
 
 #SumTotal - Create a function that takes a list as an argument and returns the sum of all the values in the list.  
 #For example sum_total([1,2,3,4]) should return 10
