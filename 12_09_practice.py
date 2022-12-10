@@ -62,7 +62,27 @@ print(length([1,2,3,4]))      # calling length function to get length of the lis
 
 
 #Minimum - Create a function that takes a list as an argument and returns the minimum value in the list.  If the passed list is empty, have the function return false.  #For example minimum([1,2,3,4]) should return 1; minimum([-1,-2,-3]) should return -3.
-#
+
+def minimum(lst):
+  """Function to calculate minimun valuse in the list"""
+  min = 0
+  n=0                    # n = list element counter
+  for num in lst:        #for loop to iterate over list
+    if n == 0:     
+      min = lst[0]       # assigning first value to min
+    if min > num:
+      min = num
+    n+=1
+  
+  if n != 0:                   # if the list is not empty, return minimum value
+    return min
+  return False                 # else return false
+
+print(minimum([1,2,3,4]))      #calling minimumfunction to ckeck minimum value from the list
+print(minimum([-1,-2,-3]))
+print(minimum([]))             #calling minimum function to ckeck minimum value in empty list
+
+
 #Maximum - Create a function that takes a list as an argument and returns the maximum value in the list.  If the passed list is empty, have the function return false.  #For example maximum([1,2,3,4]) should return 4; maximum([-1,-2,-3]) should return -1.
 
 #Ultimateaalyze - Create a function that takes a list as an argument and returns a dictionary that has the sumTotal, average, minimum, maximum ad length of the list.
