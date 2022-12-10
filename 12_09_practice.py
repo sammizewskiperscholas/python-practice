@@ -122,6 +122,24 @@ print(ultimateaalyze([1,2,5,6]))                 #calling function ultimateaalyz
 
 #ReverseList - Create a function that takes a list as a argument and return a list in a reversed order.  Do this without creating a empty temporary list.  For example #reverse([1,2,3,4]) should return [4,3,2,1]. This challenge is known to appear during basic technical interviews.
 
+def reverse_list(lst):
+  """Function to reverse original list"""
+  last= len(lst)
+  temp=0
+  first=0
+  
+  while(first < last):
+    temp = lst[first]
+    lst[first] = lst[last-1]                  #swaping elements in the list
+    lst[last-1]= temp
+    first+=1
+    last-=1
+    
+  return lst                           #returning  reversed list
+
+print(reverse_list([1,2,3,4]))         # calling revere_list function
+
+
 #Ispalindrome- Given a string, write a python function to check if it is palindrome or not. A string is said to be palindrome if the reverse of the string is the same as string. For example, “radar” is a palindrome, but “radix” is not a palindrome.
 
 #Fizzbuzz- Create a function that will print numbers from 1 to 100, with certain exceptions:
