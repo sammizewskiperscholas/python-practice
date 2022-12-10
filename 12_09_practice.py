@@ -118,7 +118,23 @@ def maximum_2(numbers):
 
 #Ultimateaalyze - Create a function that takes a list as an argument and returns a dictionary that has the sumTotal, average, minimum, maximum ad length of the list.
 
-
+def create_dict_analyze(numbers):
+     new_dict = { }
+     count = 0
+     small = numbers[0]
+     big = numbers[0]
+     for i in numbers:
+        count+=i
+        if i < small:
+             small = i
+        if i > big:
+             big = i
+     new_dict["sumTotal"] = count
+     new_dict["average"] = count/len(numbers)
+     new_dict["minimum"] = small
+     new_dict["maxiumum"] = big
+     new_dict["length"] = len(numbers)
+     return new_dict   
 
 #ReverseList - Create a function that takes a list as a argument and return a list in a reversed order. Do this without creating a empty temporary list. 
 # For example #reverse([1,2,3,4]) should return [4,3,2,1]. This challenge is known to appear during basic technical interviews.
@@ -188,5 +204,3 @@ def Fibonacci(number):
 		return start[0]
 	elif number==1:
 		return start[1]
-
-print(Fibonacci(9))
