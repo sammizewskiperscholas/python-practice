@@ -107,6 +107,18 @@ print(maximum([]))             #calling maximum function to the maximum value fr
 
 #Ultimateaalyze - Create a function that takes a list as an argument and returns a dictionary that has the sumTotal, average, minimum, maximum ad length of the list.
 
+def ultimateaalyze(lst):
+  """ Function oto create dictinoary that has sumtotal,average,minimum,maximum & length of the list"""
+  ultimate_dict = {}
+  ultimate_dict["sumtotal"] = sum_total(lst)      #sum of the list values
+  ultimate_dict["average"] = average(lst)        #avg of the list values
+  ultimate_dict["minimum"] = minimum(lst)        #minimum value from the list
+  ultimate_dict["maximum"] = maximum(lst)        #maximum value from the list
+  ultimate_dict["length"] = length(lst)          #lenght of the list
+  return ultimate_dict                           #returning dictinoary that has sumtotal,average,minimum,maximum & length of the list
+
+print(ultimateaalyze([1,2,5,6]))                 #calling function ultimateaalyze
+
 
 #ReverseList - Create a function that takes a list as a argument and return a list in a reversed order.  Do this without creating a empty temporary list.  For example #reverse([1,2,3,4]) should return [4,3,2,1]. This challenge is known to appear during basic technical interviews.
 
