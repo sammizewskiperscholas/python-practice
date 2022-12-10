@@ -85,7 +85,28 @@ print(minimum([]))             #calling minimum function to ckeck minimum value 
 
 #Maximum - Create a function that takes a list as an argument and returns the maximum value in the list.  If the passed list is empty, have the function return false.  #For example maximum([1,2,3,4]) should return 4; maximum([-1,-2,-3]) should return -1.
 
+def maximum(lst):
+  """Function to calculate maximum valuse in the list. if list is empty, returns False"""
+  max = 0
+  n=0                    # n = list element counter
+  for value in lst:        #for loop to iterate over list
+    if n == 0:     
+      max = lst[0]       # assining firlst value in the list to max
+    if max < value:      
+      max = value              # assinging list value max if max is less than list value
+    n+=1
+  
+  if n != 0:                   # if the list is not empty, return maximum value
+    return max
+  return False                 # else return false
+
+print(maximum([1,2,3,4]))      # calling maximum function to get maximum value from the list 
+print(maximum([-1,-2,-3]))
+print(maximum([]))             #calling maximum function to the maximum value from the empty list
+
+
 #Ultimateaalyze - Create a function that takes a list as an argument and returns a dictionary that has the sumTotal, average, minimum, maximum ad length of the list.
+
 
 #ReverseList - Create a function that takes a list as a argument and return a list in a reversed order.  Do this without creating a empty temporary list.  For example #reverse([1,2,3,4]) should return [4,3,2,1]. This challenge is known to appear during basic technical interviews.
 
