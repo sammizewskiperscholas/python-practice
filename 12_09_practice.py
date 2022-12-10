@@ -164,6 +164,24 @@ print(is_palindrome("radix"))
   #If the number is a multiple of 5, print “Buzz” instead of the number.
   #If the number is a multiple of 3 and 5, print “FizzBuzz” instead of the number.
 
+def fizz_buzz():
+  """function prints numbers from 1 to 100, with certain exceptions:
+#   #If the number is a multiple of 3, prints “Fizz” instead of the number.
+#   #If the number is a multiple of 5, prints “Buzz” instead of the number.
+#   #If the number is a multiple of 3 and 5, prints “FizzBuzz” instead of the number."""
+  
+  for number in range (1,101):         
+    if number % 3 == 0 and number % 5 == 0:   # chek if number is multipler of 3 and 5
+      print("FizzBuzz", end =", ")
+    elif number % 3 == 0:                      #check if number iis multiplier of 3
+      print("Fizz",end = ", ")
+    elif number % 5 == 0:                      #check if number is multiplier of 5
+      print("Buzz", end= ", ")
+    else:
+      print(number, end= ", ")
+
+fizz_buzz()                                   #calling function fizz_buzz
+
 #Fibonacci- The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, #starting from 0 and 1. That is,
   #F(0) = 0, F(1) = 1
   #F(n) = F(n - 1) + F(n - 2), for n > 1.
