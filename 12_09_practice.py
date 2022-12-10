@@ -38,7 +38,19 @@ print(sum_total([1,2,3,4]))   #calling sum_total function to get the sum of all 
 
 #Average - Create a function that takes a list as an argument and returns the average of all the values in the list.  For example multiples([1,2,3,4]) should return #2.5
 
+def average(lst):
+  """Function to calculate average of all the values in the list"""
+  result = 0                
+  count = 0                    #counter to count number of values
+  for num in lst:
+    result += num              # calculating sum
+    count += 1
+  return result/count          #average = sum of all the values /number of values
+
+print(average([1,2,3,4]))    #calling multiples function to get the average of the list
+
 #Length - Create a function that takes a list as an argument and returns the length of the list.  For example length([1,2,3,4]) should return 4
+
 
 #Minimum - Create a function that takes a list as an argument and returns the minimum value in the list.  If the passed list is empty, have the function return false.  #For example minimum([1,2,3,4]) should return 1; minimum([-1,-2,-3]) should return -3.
 #
