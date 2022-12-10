@@ -51,6 +51,15 @@ print(average([1,2,3,4]))    #calling multiples function to get the average of t
 
 #Length - Create a function that takes a list as an argument and returns the length of the list.  For example length([1,2,3,4]) should return 4
 
+def length(lst):
+  """Function returns length of the list"""
+  count = 0                   # counter to count number of element in the list
+  for num in lst:
+    count+=1
+  return count                # returning lenght of the list
+
+print(length([1,2,3,4]))      # calling length function to get length of the list
+
 
 #Minimum - Create a function that takes a list as an argument and returns the minimum value in the list.  If the passed list is empty, have the function return false.  #For example minimum([1,2,3,4]) should return 1; minimum([-1,-2,-3]) should return -3.
 #
