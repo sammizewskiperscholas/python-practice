@@ -12,6 +12,18 @@ print(make_it_big([-1,3,5,-5]))
 
 #Count Positives - Given a list of numbers, create a function to replace last value with number of positive values. Example, count_positives([-1,1,1,1]) changes list #to [-1,1,1,3] and returns it.  (Note that zero is not considered to be a positive number).
 
+def count_positives(lst):
+  """ Function to replace last value in the list with number of positive values in the list"""
+  count=0                     # counter to count number of positive values
+  for number in lst:
+    if number >= 1:           # cheking if number is positive
+      count+=1
+  if count > 1:
+    lst[-1]=count             # replacing last value in the list with total number of positive values in the list
+  return lst
+
+print(count_positives([-1,1,1,1]))    
+
 #SumTotal - Create a function that takes a list as an argument and returns the sum of all the values in the list.  For example sum_total([1,2,3,4]) should return 10
 
 #Average - Create a function that takes a list as an argument and returns the average of all the values in the list.  For example multiples([1,2,3,4]) should return #2.5
