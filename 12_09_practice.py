@@ -172,6 +172,21 @@ Fizzbuzz()
 
 #Fibonacci- The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, 
 #such that each number is the sum of the two preceding ones, #starting from 0 and 1. That is,
-  #F(0) = 0, F(1) = 1
-  #F(n) = F(n - 1) + F(n - 2), for n > 1.
-  #Create a function that accepts any number and will create a sequence based on the fibonacci sequence.
+#F(0) = 0, F(1) = 1
+#F(n) = F(n - 1) + F(n - 2), for n > 1.
+#Create a function that accepts any number and will create a sequence based on the fibonacci sequence.
+
+def Fibonacci(number):
+	start=[0,1]
+	count=0
+	while count+2<number:
+		start.append((start[0+count]+start[1+count]))
+		count+=1
+	if number>2:
+		return start 
+	elif number==0:
+		return start[0]
+	elif number==1:
+		return start[1]
+
+print(Fibonacci(9))
