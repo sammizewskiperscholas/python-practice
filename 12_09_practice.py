@@ -142,6 +142,23 @@ print(reverse_list([1,2,3,4]))         # calling revere_list function
 
 #Ispalindrome- Given a string, write a python function to check if it is palindrome or not. A string is said to be palindrome if the reverse of the string is the same as string. For example, “radar” is a palindrome, but “radix” is not a palindrome.
 
+def is_palindrome(str):
+  """Function to check if string is palindrome"""
+  reverse_str=""
+  original_str=""
+  for char in str:
+    if char.isalpha():
+      reverse_str= char + reverse_str
+      original_str = original_str + char
+  if reverse_str != original_str:                   #if reverse string is not equal to original string returns False
+    return False
+  else:
+    return True                                 #else True It is palindrome string
+
+print(is_palindrome("radar"))                   
+print(is_palindrome("radix"))
+
+
 #Fizzbuzz- Create a function that will print numbers from 1 to 100, with certain exceptions:
   #If the number is a multiple of 3, print “Fizz” instead of the number.
   #If the number is a multiple of 5, print “Buzz” instead of the number.
