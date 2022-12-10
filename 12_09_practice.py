@@ -26,6 +26,16 @@ print(count_positives([-1,1,1,1]))
 
 #SumTotal - Create a function that takes a list as an argument and returns the sum of all the values in the list.  For example sum_total([1,2,3,4]) should return 10
 
+def sum_total(lst):
+  """Function to calculate sum of all values in the list"""
+  total = 0
+  for number in lst:
+    total += number           # calculating sum 
+  return total                # returning sum of all values in the list
+ 
+print(sum_total([1,2,3,4]))   #calling sum_total function to get the sum of all the values in the list
+
+
 #Average - Create a function that takes a list as an argument and returns the average of all the values in the list.  For example multiples([1,2,3,4]) should return #2.5
 
 #Length - Create a function that takes a list as an argument and returns the length of the list.  For example length([1,2,3,4]) should return 4
