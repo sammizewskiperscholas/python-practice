@@ -45,13 +45,16 @@ def newtuple(old):
     for x in old:
         new.append(x[0])
         new2.append(x[1])
+#new holds the names, new2 holds the values
     for y in new:
         newstring += y
         newstring += ','
     newstring = newstring[:-1]
+#newstring takes everything in new, followed by a comma, into a string - then the last character is removed
     for z in new2:
         new2string += str(z)
         new2string += ','
+#new2string does the same as above, for new2
     new2string = new2string[:-1]
     new3 = newstring, new2string
     return new3
