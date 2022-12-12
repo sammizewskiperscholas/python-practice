@@ -137,11 +137,10 @@ def fizzbuzz():
 # F(n) = F(n - 1) + F(n - 2), for n > 1.
 # Create a function that accepts any number and will create a sequence based on the fibonacci sequence.
 def fibonacci_recur(n):
-    if (n >= 0):
-        if n <= 1:
-            return n
-        else:
-            return (fibonacci_recur(n - 1) + fibonacci_recur(n - 2))
+    if n<2:
+         return n
+    else:
+        return (fibonacci_recur(n - 1) + fibonacci_recur(n - 2))
 
 
 # get input from user
