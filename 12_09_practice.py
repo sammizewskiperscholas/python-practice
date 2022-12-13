@@ -138,14 +138,12 @@ print(fizzBuzz())
   #F(n) = F(n - 1) + F(n - 2), for n > 1.
   #Create a function that accepts any number and will create a sequence based on the fibonacci sequence.
 def F(n):
-    result = 0
-    if n == 0:
-        result = 0
-    elif n == 1:
-        result += 1
-    elif n >1:
-        result = result + n*2-3
+    if n == 1:
+        return 0
+    elif n == 2:
+        return 1
+    elif n > 2:
+        return F(n - 1) + F(n - 2)
     else: 
         return "That's not a positive number. Give me a positive number."
-    return result
 print(F(10))
