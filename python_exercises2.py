@@ -4,6 +4,7 @@
 # Generator exercises: Create a generator, primes_gen that generates prime numbers starting from 2.
 
 import math
+from functools import reduce
 
 # use the principle that if a number have any factor less than the numbers square root, then the number cannot be prime
 
@@ -62,3 +63,13 @@ print(list(filter(lambda x : True if 'a' in x[0] else False, prog_lang)))
 
 #4. Filter the list so that it only contains languages whose version is in integer form.
 print(list(filter(lambda x : isinstance(x[1],int) , prog_lang)))
+
+#5 Transform the list so that it contains the tuples in the form,("language in all lower case", length of the language string)
+
+print(list(map(lambda x: (x[0].lower(), len(x[0])), prog_lang)))
+
+#6 Generate a tuple in the form, ("All languages separated by commas", "All versions separated by commas")
+
+
+print((reduce(lambda x,y: ",".join([x,y]), [x for (x,y) in prog_lang]),(reduce(lambda x,y: ",".join([x,y]), [str(y) for (x,y) in prog_lang]))))
+
