@@ -1,0 +1,11 @@
+#Transform the list so that it contains the tuples in the form,
+#("language in all lower case", length of the language string)
+
+
+prog_lang = [('Python', 3.8),
+('Java', 13),
+('JavaScript', 2019),
+('Scala', 2.13)]
+
+tuple_list = list(map(lambda x : (x[0].lower(),len(x[0])),prog_lang))
+print(tuple_list)
