@@ -134,18 +134,73 @@ myfunc(30)
 #Create a function that accepts any number and will create a sequence based on the fibonacci sequence.
 
 def fibonacci(n):
-  fib_list = []
-  t=0
-  if n == 1:
-    fib_list.insert(0, 0)
-  elif n > 1:
-    fib_list.insert(0, 0)
-    fib_list.insert(1, 1)
-  
-    for i in range(2,n):
-      t = fib_list[i-2] + fib_list[i-1]
-      fib_list.append(t)
-  
+  fib_list = [0,1]
+  for i in range(2,n):
+    fib_list.append(fib_list[i-2] + fib_list[i-1])
   return fib_list
 
 print(fibonacci(10))
+
+#########################################################################################################
+############# 12-11-python-practice #####################################################################
+
+####### slide 14 #######
+#Create a generator, primes_gen that generates prime numbers starting from 2
+def primes_gen():
+  return [i for i in range(1,101) if all(i%j != 0 for j in range(2,i))]
+  
+gen = primes_gen()
+for _ in range(10):
+  print(next(gen), end=' ')
+
+############ slide 19 and 20 ##################
+#Consider the list:
+prog_lang = [('Python', 3.8), ('Java', 13), ('JavaScript', 2019), ('Scala', 2.13)]
+
+#1. Sort the list by each language's version in ascending order.
+def version_sort(pl):
+  pl_sort = sorted(pl, key=lambda t : t[1])
+  return pl_sort
+
+print(version_sort(prog_lang))
+
+#2. Sort the list by the length of the name of each language in descending order.
+
+def lname_len_sort(pl):
+  lname_len_sort = sorted(pl, key=lambda t : len(t[0]), reverse = True)
+  return lname_len_sort
+
+print(lname_len_sort(prog_lang))
+
+#3. Filter the list so that it only contains languages with 'a' in it.
+
+def filter_alang_pl(pl):
+  pl_fil = list(filter(lambda t : "a" in t[0].lower(), pl))
+  return pl_fil
+
+print(filter_alang_pl(prog_lang))
+
+
+#4. Filter the list so that it only contains languages whose version is in integer form
+
+def filter_intver_pl(pl):
+  pl_fil = list(filter(lambda t : type(t[1]) == int, pl))
+  return pl_fil
+
+print(filter_intver_pl(prog_lang))
+
+#5. Transform the list so that it contains the tuples in the form, ("language in all lower case", length of the language string)
+
+def tuple_lang_len(pl):
+  pl_tup = (*map(lambda t : t[0].lower()+", "+ str(len(t[0])), pl),)
+  return pl_tup
+
+print(tuple_lang_len(prog_lang))
+
+#6. Generate a tuple in the form, ("All languages separated by commas", "All versions separated by commas")
+
+def tuple_lang_ver(pl):
+    pl_tup = (*map(lambda t : t[0], pl),)
+    return pl_tup
+
+print(tuple_lang_ver(prog_lang))
