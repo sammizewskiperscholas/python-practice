@@ -1,3 +1,5 @@
+#practice on Generator,lamda
+from functools import reduce
 #1. Use list comprehension to create a list containing a solution for the
 #famous FizzBuzz problem. For integers 1 to 100, inclusively, the value
 #should be:
@@ -71,7 +73,8 @@ print(list5)
 #6. Generate a tuple in theform,
 #("All languages separated by commas",
 #"All versions separated by commas")
-list6=list(map(lambda x  : x[0]+' ,'+str(x[1]),prog_lang))
-print(list6)
+print(reduce(lambda x,y :(f'{x[0]},{y[0]}',f'{x[1]},{y[1]}'),prog_lang))
+
+
 
 
