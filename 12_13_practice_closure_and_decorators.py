@@ -104,18 +104,18 @@ print(square(3.5)) # output: The input data type is <class 'float'>
 # decorated function is return_type and print the result before executing
 # the function.
 
-def check_return_type(func):
+def check_return_type(dtype):
+  def inner(func):
     def wrapper(a):
-        if type(func(a)) == float:
-            print("The output data type is ",type(func(a)))
-        else:
-            print("=========Error!!")
-     #       print("=========The return type is NOT ",type(func(a)))
-            print("=========The return type is NOT str")
+        if type(a) != dtype:
+            print("=========Error!!\n =========The return type is NOT {}".format(dtype))
+        elif type(a) == dtype:
+            print("The output data type is {}".format(dtype))
         return func(a)
-    return wrapper
+    return wrapper      
+  return inner
 
-@check_return_type
+@check_return_type(str)
 def square(n):
   return n ** 2
 
@@ -123,7 +123,7 @@ print(square(6)) # output: =========Error!!
                  #=========The return type is NOT <class 'str'>
                  #36
 
-@check_return_type
+@check_return_type(float)
 def square(n):
   return n ** 2
 
@@ -140,8 +140,7 @@ def execute_log(func):
   def wrapper(*args, **kwargs):
     dtime = datetime.now()
     result = func(*args, **kwargs)
-    print('{0} {1}'.format(dtime,func.__name__))
-    return result
+    return ('{0} {1} {2}'.format(dtime,func.__name__,result))
   return wrapper  
 
 
