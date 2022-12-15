@@ -24,6 +24,7 @@ print(*m3_under30)
 print(*m7_under30)
 
 #*************************************************Decorators-Exercises*************************************************************************************
+
 # 1. make_upper – make every letter of a string returned from the decorated function uppercase.
 
 def make_upper(func):
@@ -86,25 +87,26 @@ print(square(3.5))
 #5. check_return_type(return_type) – check if the return type of the decorated function is return_type and print 
 #the result before executing the function.
 
-def check_return_type(func):
-    def wrapper(a):
-        if type(func(a)) == float:
-            print("The output data type is ",type(func(a)))
-        else:
-            print("=========Error!!")
-            print("=========The return type is NOT",type(func(a)))
-        return func(a)
-    return wrapper
-@check_return_type
+def check_return_type(dtype):
+    def inner(func):
+        def wrapper(n):
+          if type(n) != dtype:
+               print("================Error!!\n==============The return type is NOT {}".format(dtype)) 
+               
+          elif type(n) == dtype:
+               return ("The return type is {}".format(dtype)) # + type(n))
+          return func(n)        
+        return wrapper
+    return inner
+@check_return_type(str)
 def square(n):
     return n ** 2
-
-print(square(6))
-
-@check_return_type
+print(square(6)) # output: =========Error!!
+                 #=========The return type is NOT <class 'str'>
+                 #36
+@check_return_type(float)
 def square(n):
     return n ** 2
-
 print(square(2.9))
 
 #6. execute_log – write a function execution log on the log file.
@@ -114,10 +116,9 @@ from datetime import datetime, timezone
 def execute_log(func):
     
     def inner(*args, **kwargs):
-        called_at = datetime.now(timezone.utc)
+        called_at = datetime.now()
         to_execute = func(*args, **kwargs)
-        print('{0} {1}'.format(called_at,func.__name__))
-        return to_execute
+        return ('{0} {1} {2}'.format(called_at,func.__name__,to_execute))
     return inner
 
 
@@ -128,7 +129,6 @@ def multiply(*nums):
         mult *= n
     return mult
 # return multiply
-
 
 @execute_log
 def hello_world():
