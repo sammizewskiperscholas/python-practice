@@ -117,5 +117,5 @@ print(ET.tostring(collection, encoding='utf8').decode('utf8')) # 🌟
 # auto-generate every time. I'm going to just write
 # out the lines for now. 
 
-xml_check()
+#xml_check()
 
