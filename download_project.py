@@ -38,21 +38,21 @@ for f_ext, f_list in files_mapping.items():
     if f_ext in video_extension:
         for file in f_list:
             os.rename(os.path.join(download_path, file), os.path.join(base_path, 'video_folder', file))
-    if f_ext in audio_extension:
+    elif f_ext in audio_extension:
         for file in f_list:
-             os.rename(os.path.join(download_path, file), os.path(base_path, 'audio_folder', file))
+             os.rename(os.path.join(download_path, file), os.path.join(base_path, 'audio_folder', file))
     elif f_ext in image_extension:
         for file in f_list:
-            os.rename(os.path.join(download_path, file), os.path(base_path, 'image_folder', file))
+            os.rename(os.path.join(download_path, file), os.path.join(base_path, 'image_folder', file))
     elif f_ext in document_extension:
         for file in f_list:
-            os.rename(os.path.join(download_path, file), os.path(base_path, 'document_folder', file))
+            os.rename(os.path.join(download_path, file), os.path.join(base_path, 'document_folder', file))
     elif f_ext in compression_extension:
         for file in f_list:
-            os.rename(os.path.join(download_path, file), os.path(base_path, 'compression_folder', file))
+            os.rename(os.path.join(download_path, file), os.path.join(base_path, 'compression_folder', file))
     elif f_ext in install_extension:
         for file in f_list:
-            os.rename(os.path.join(download_path, file), os.path(base_path, 'installation_folder', file))
+            os.rename(os.path.join(download_path, file), os.path.join(base_path, 'installation_folder', file))
     else:
         for file in f_list:
             os.rename(os.path.join(download_path, file), os.path.join(base_path, 'other_folder', file))   
