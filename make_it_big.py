@@ -4,16 +4,7 @@ def make_it_big(array):
         if array[i]>0:
             array[i]= "big"
    return array   
-
 print(make_it_big([-1, 3, 5, -5]))    
    
-def count_positives(array):
-   count = 0
-   for val in array:
-        if val > 0:
-            count += 1
-   array[len(array)-1] = count
-   return array
 
 
-print(count_positives([-1,1,1,1]))

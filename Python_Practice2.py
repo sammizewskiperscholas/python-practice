@@ -1,4 +1,4 @@
-
+import re
 #Without List Comprehension
 my_list = []
 for e in range(1, 10, 2):
@@ -95,15 +95,45 @@ for char in unique_str("Hello"):
 
 #Sort the list by each language's version in ascending order.
 prog_lang = [('Python', 3.8), ('Java', 13), ('JavaScript', 2019), ('Scala', 2.13)]
-new_list = sorted(prog_lang, key = lambda x : x[1], reverse = True)
+new_list = sorted(prog_lang, key = lambda x : x[0], reverse = True)
 print(new_list)
 
 #Sort the list by the length of the name of each language in descending order.
 prog_lang = [('Python', 3.8), ('Java', 13), ('JavaScript', 2019), ('Scala', 2.13)]
-new_list2 = sorted(prog_lang, key = lambda x : x[1], reverse = False)
+new_list2 = sorted(prog_lang, key = lambda x : x[0], reverse = False)
 print(new_list2)
 
-new_list4 = list(filter(lambda x: x[1] 'a', prog_lang))
+#Filter the list so that it only contains languages with 'a' in it.
+search_key = 'a'
+new_list3 = list(filter(lambda x: search_key in x[0], prog_lang))
+print(new_list3)
+
+#Filter the list so that it only contains languages whose version is in integer
+#form.
+new_list4 = list(filter(lambda x: isinstance(x[1], int), prog_lang))
 print(new_list4)
+
+#Transform the list so that it contains the tuples in the form,
+#("language in all lower case", length of the language string)
+lowername = list(map(lambda x: x[0].lower(), prog_lang))
+lengthname = list(map(lambda x: len(x[0]), prog_lang))
+i = iter(lowername)
+j = iter(lengthname)
+final_list = tuple(zip(i,j))
+print(final_list)
+
+#Generate a tuple in the form,
+#("All languages separated by commas",
+#"All versions separated by commas")
+lang_name = []
+lang_name = ' '.join(map(lambda x: x[0], prog_lang))
+version_no = []
+version_no = ' '.join(map(lambda x: str(x[1]), prog_lang))
+lang_name1 = tuple(map(str, lang_name.split(', ')))
+version_no2 = tuple(map(str, version_no.split(', ')))
+result =  lang_name1 + version_no2
+print(lang_name1)
+print(version_no2)
+print(result)
 
 
