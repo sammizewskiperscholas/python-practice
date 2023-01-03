@@ -1,0 +1,138 @@
+[
+    {
+        "id"        :   "101",
+        "name"      :   "Samu",
+        "age"       :   36,
+        "course"   : {"course_name" :  "Computer Science",
+                      "marks":
+                    {           "tamil"     :   100,
+                                "english"   :   100,
+                                "computer"  :   100,
+                                "science"        :   95
+                    } },
+        "address"   : "95 Commons Dr",
+        "hobbies"    : "sports"
+    },
+    {
+        "id"        :   "102",
+        "name"      :   "abc",
+        "age"       :   31,
+        "course"   : {"course_name" :  "Computer Science",
+                      "marks":
+                    {           "tamil"     :   100,
+                                "english"   :   100,
+                                "computer"  :   95,
+                                "science"   :   85
+                    } },
+        "address"   : "90 Main Street",
+        "hobbies"    : "painting"
+    },
+    {
+        "id"        :   "103",
+        "name"      :   "def",
+        "age"       :   20,
+        "course"   : {"course_name" :  "Computer Science",
+                      "marks":
+                    {           "tamil"     :   68,
+                                "english"   :   55,
+                                "computer"  :   35
+                    } },
+        "address"   : "9519 Kirk Street ",
+        "hobbies"    : "drawing"
+    },
+    {
+        "id"        :   "104",
+        "name"      :   "ghi",
+        "age"       :   21,
+        "course"   : {"course_name" :  "Computer Science",
+                      "marks":
+                    {           "tamil"     :   48,
+                                "english"   :   85,
+                                "computer"  :   95
+                    } },
+        "address"   : "100 Plano Dr",
+        "hobbies"    : "Origami"
+    },
+    {
+        "id"        :   "105",
+        "name"      :   "jkl",
+        "age"       :   19,
+        "course"   : {"course_name" :  "Computer Science",
+                      "marks":
+                    {           "tamil"     :   58,
+                                "english"   :   73,
+                                "computer"  :   23
+                    } },
+        "address"   : "49 Simmons Dr",
+        "hobbies"    : "Sewing"
+    },
+    {
+        "id"        :   "106",
+        "name"      :   "Deepesh",
+        "age"       :   19,
+        "course"   : {"course_name" :  "Computer Science",
+                      "marks":
+                    {           "tamil"     :   99,
+                                "english"   :   98,
+                                "computer"  :   100
+                    } },
+        "address"   : "221 Commodo Blvd.",
+        "hobbies"    : "sports"
+    },
+    {
+        "id"        :   "107",
+        "name"      :   "wesley",
+        "age"       :   40,
+        "course"   : {"course_name" :  "Computer Science",
+                      "marks":
+                    {           "tamil"     :   48,
+                                "english"   :   95,
+                                "computer"  :   79
+                    } },
+        "address"   : "23 Miskin Dr",
+        "hobbies"    : "swimming"
+    },
+    {
+        "id"        :   "108",
+        "name"      :   "Randy",
+        "age"       :   28,
+        "course"   : {"course_name" :  "Computer Science",
+                      "marks":
+                    {           "tamil"     :   78,
+                                "english"   :   73,
+                                "computer"  :   65
+                    } },
+        "address"   : "15 Cosmo Blvd.",
+        "hobbies"    : "drawing"
+    },
+    {
+        "id"        :   "109",
+        "name"      :   "Tom",
+        "age"       :   20,
+        "course"   : {"course_name" :  "Computer Science",
+                      "marks":
+                    {           "tamil"     :   90,
+                                "english"   :   94,
+                                "computer"  :   92
+                    } },
+        "address"   : "39 Bridge Dr",
+        "hobbies"    : "Sewing"
+    },
+    {
+        "id"        :   "110",
+        "name"      :   "Hercules",
+        "age"       :   30,
+        "course"   : {"course_name" :  "Computer Science",
+                      "marks":
+                    {           "tamil"     :   59,
+                                "english"   :   82,
+                                "computer"  :   63
+                    } },
+        "address"   : "9526 Costco Street",
+        "hobbies"    : "painting"
+            }
+]
+    
+
+                
+    
