@@ -69,13 +69,73 @@ with open("filtered_data_file.json", "w") as data_file:
     filtered_todos = list(filter(keep, todos))
     json.dump(filtered_todos, data_file, indent=2)
 
+class Elf:
+    def __init__(self, level, ability_scores=None):
+        self.level = level
+        self.ability_scores = {
+            "str": 11, "dex": 12, "con": 10,
+            "int": 16, "wis": 14, "cha": 13
+        } if ability_scores is None else ability_scores
+        self.hp = 10 + self.ability_scores["con"]
 
 
+        elf = Elf(level=4)
+        json.dumps(elf)
+#         # print(elf)
+# z=8+3j
+# print(type(z))
+# # json.dumps(z)
+# print(z.real)
+# print(z.imag)
+
+# complex(8,3)==z
+
+
+        def encode_complex(z):
+                if isinstance(z, complex):
+                    return (z.real, z.imag)
+                else:
+                    type_name = z.__class__.__name__
+                    raise TypeError(f"Object of type '{type_name}' is not JSON serializable")
+                    # result=json.dumps(9 + 5j, default=encode_complex)
+                    # print(result)
+        # r=json.dumps(elf, default=encode_complex)
+        # print(r)
     
+class ComplexEncoder(json.JSONEncoder):
+    def default(self, z):
+        if isinstance(z, complex):
+            return (z.real, z.imag)
+        else:
+            return super().default(z)
+result=json.dumps(2 + 5j, cls=ComplexEncoder)
+print(result)
+
+encoder = ComplexEncoder()
+r=encoder.encode(3 + 6j)
+print(r)
+
+complex_json = json.dumps(4 + 17j, cls=ComplexEncoder)
+# json.loads(complex_json)
+print(complex_json)
 
 
+def decode_complex(dct):
+    if "__complex__" in dct:
+        return complex(dct["real"], dct["imag"])
+    return dct
 
+with open("complex_data.json") as complex_data:
+    data = complex_data.read()
+    z = json.loads(data, object_hook=decode_complex)
 
+    print(z)
+
+# with open("complex_data.json") as complex_data:
+#     data = complex_data.read()
+#     numbers = json.loads(data, object_hook=decode_complex)
+ 
+# print(numbers)
 
 
 
