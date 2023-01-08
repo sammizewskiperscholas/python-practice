@@ -1,0 +1,11 @@
+# Filter the list so that it only contains languages whose version is in integer
+# form.
+
+prog_lang = [('Python', 3.8),
+('Java', 13),
+('JavaScript', 2019),
+('Scala', 2.13)]
+
+filter_list = list(filter(lambda x: isinstance(x[1], int) ,prog_lang))
+
+print(filter_list)
