@@ -26,3 +26,16 @@ st = "CREATE DATABASE test_db"
 cur.execute(st)
 print("test_db is created")
 con.close()
+
+con = mariadb.connect(
+                    host="localhost",
+                    user="root",
+                    password="password",
+                    database="test_db")
+
+print("Successfully connected to MariaDB")
+
+cur = con.cursor()
+st="CREATE TABLE Registration \
+    (id ingterger, age integer, first varchar(50), \
+    "

@@ -1,0 +1,20 @@
+
+def create_tuple(x,y):
+    t = (x,y)
+    return t
+
+
+print(create_tuple("Sushama", "Cardozo"))
+print(type(create_tuple("Sushama", "Cardozo")))
+print(create_tuple("Sushama", 2023))
+x,y = create_tuple("Sushama", 2023)
+print(x,y)
+print(type(x))
+print(type(y))
+new_tuple = ("Happy New Year",)
+print(type(new_tuple))
+new_tuple = new_tuple + ("2003",)
+print(new_tuple)
+
+
+

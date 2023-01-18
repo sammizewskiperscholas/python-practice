@@ -1,0 +1,54 @@
+#!/usr/bin/env python3
+import re
+import operator
+
+per_user = {}
+errors = {}
+
+with open('dpkg2.log') as f:
+    for ln in f.readlines():
+        #match = re.search(r"ticky: ([\w+]*):? ([\w' ]*)[\[[#0-9]*\]?]? ?\((.*)\)$", ln)
+        #2022-11-07 12:14:01 status unpacked avahi-autoipd:amd64 0.7-3.1ubuntu1.3
+        #2022-11-07 12:14:01 status half-configured avahi-autoipd:amd64 0.7-3.1ubuntu1.3
+        #2022-11-07 12:14:02 status installed avahi-autoipd:amd64 0.7-3.1ubuntu1.3
+        match = re.search(r" (\w+) ([\w+].*):(.*)", ln)
+        if match is None:
+            continue
+        else:
+            print("match is not none")
+            #print(match)
+        str, msg, user = match.group(1), match.group(2), match.group(3)
+        #str, msg, user = "status"," triggers-pending man-db","amd64 2.8.3-2ubuntu0.1"
+        #print("The 3 strings are : ", str, msg, user)
+        if str is None or msg is None or user is None:
+            continue
+        if msg not in errors.keys():
+            errors[msg] = 1
+        else:
+            errors[msg] += 1
+        if user not in per_user.keys():
+            per_user[user] = {}
+            per_user[user]['configure'] = 0
+            per_user[user]['trigproc'] = 0
+        if str == 'configure':      #INFO
+            if user not in per_user.keys():
+                #per_user[user] = {}
+                per_user[user]['configure'] = 0
+            else:
+                per_user[user]["configure"] += 1
+        elif str == 'trigproc':     #ERROR
+            if user not in per_user.keys():
+                #per_user[user] = {}
+                per_user[user]['trigproc'] = 0
+            else:
+                per_user[user]['trigproc'] += 1
+
+errors_arr = sorted(errors.items(), key=operator.itemgetter(1), reverse=True)
+per_user_arr = sorted(per_user.items(), key=operator.itemgetter(0))
+
+errors_arr.insert(0, ('Error', 'Count'))
+per_user_arr.insert(0, ('Username', 'INFO', 'ERROR'))
+#print(errors_arr)
+print(per_user_arr)
+
+f.close()
